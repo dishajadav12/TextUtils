@@ -52,19 +52,19 @@ export default function TextForm(props) {
    <div className="form-group ">
     <h1>{props.heading}</h1>
     <textarea className={`form-control bg-${props.mode} text-${props.mode==='light'?'dark':'light'}`} value={text} id="textBox" rows="8" onChange={handleOnChange} ></textarea>
-    <button type="button" className="btn btn-primary my-3 mx-1" onClick={handleOnClickUpper}>Convert to Upper Case</button>
-    <button type="button" className="btn btn-primary my-3 mx-1" onClick={handleOnClickLower}>Convert to Lower Case</button>
-    <button type="button" className="btn btn-primary my-3 mx-1" onClick={handleOnExtraSpace}>Remove Extra Space</button>
+    <button type="button" className="btn btn-primary my-2 mx-1" onClick={handleOnClickUpper}>Convert to Upper Case</button>
+    <button type="button" className="btn btn-primary my-2 mx-1" onClick={handleOnClickLower}>Convert to Lower Case</button>
+    <button type="button" className="btn btn-primary my-2 mx-1" onClick={handleOnExtraSpace}>Remove Extra Space</button>
 
-    <button type="button" className="btn btn-primary my-3 mx-1" onClick={handleOnClickClear} >Clear Text</button>
-    <button type="button" className="btn btn-primary my-3 mx-1" onClick={handleOnCopy}>Copy Text</button>
+    <button type="button" className="btn btn-primary my-2 mx-1" onClick={handleOnClickClear} >Clear Text</button>
+    <button type="button" className="btn btn-primary my-2 mx-1" onClick={handleOnCopy}>Copy Text</button>
    
    </div>
   </form>
 </div>
 <div className={`container my-2`}>
   <h2>Your text summary:</h2>
-  <p>{text.split(" ").length} words and {text.length} Characters.</p>
+  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} Characters.</p>
   <p>{0.008*text.split(" ").length} Minutes to read</p>
   <h2>Preview</h2>
   <p>{text.length>0?text:"Enter some text in Text Box to preview it here..."}</p>
