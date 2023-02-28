@@ -22,7 +22,7 @@ function App() {
      })
      setTimeout(()=>{
       setAlert(null);
-     },1500);
+     },1000);
   }
   const toggleMode=()=>{
     if(mode ==='light'){
@@ -46,9 +46,9 @@ function App() {
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn}/>
     <Alert alert={alert}/>
       <Routes>
-        <Route exact path="/about" element={<About />}>
+        <Route exact path="/about" element={<About mode={mode}><About /></About>}>
       </Route>
-      <Route exact path="/" index element={ <TextForm heading="Enter the text to analyze:" mode={mode} showAlert={showAlert}>
+      <Route exact path="/" index element={ <TextForm heading="Try TextUtils - Word counter, Character counter" mode={mode} showAlert={showAlert}>
              <TextForm/></TextForm> } />
       </Routes>
 </BrowserRouter>
