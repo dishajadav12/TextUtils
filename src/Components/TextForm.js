@@ -3,33 +3,28 @@ import React,{ useState } from 'react'
 
 export default function TextForm(props) {
     const handleOnChange = (event) =>{
-        console.log('Change in text ' );
         setText(event.target.value);
         
     }
     const handleOnClickUpper = () =>{
-        console.log('Convert to uppercase button has clicked.' + text);
         let newText=text.toUpperCase();
         setText(newText);
         props.showAlert(" text is converted to uppercase. ","success");
 
     }
     const handleOnClickLower = () =>{
-      console.log('Convert to Lower case button has clicked.' + text);
       let newText=text.toLowerCase();
       setText(newText);
       props.showAlert(" text is converted to lowercase. ","success");
 
     }
     const handleOnClickClear = () =>{
-      console.log('Clear Text button has clicked.');
       let newText='';
       setText(newText);
       props.showAlert(" text is cleared. ","success");
 
   }
   const handleOnCopy = () =>{
-    console.log('Copy Text button has clicked.');
     var copyText=document.getElementById('textBox');
     copyText.select();
     document.getSelection().removeAllRanges();
@@ -38,7 +33,6 @@ export default function TextForm(props) {
 
 }
   const handleOnExtraSpace = () =>{
-    console.log('Remove Extra Space button has clicked.');
     let newText= text.split(/[ ]+/);
     setText(newText.join(" "));
     props.showAlert(" Extra space has boon removed!. ","success");
@@ -65,8 +59,8 @@ export default function TextForm(props) {
 </div>
 <div className={`container my-2`}>
   <h2>Your text summary:</h2>
-  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} Characters.</p>
-  <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to read</p>
+  <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} Characters.</p>
+  <p>{0.008*text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes to read</p>
   <h2>Preview</h2>
   <p>{text.length>0?text:"Nothing to preview"}</p>
 </div>

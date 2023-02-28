@@ -1,9 +1,9 @@
 import React from 'react'
-
 export default function About(props) {
   
   let myStyle= { color:props.mode === 'dark' ? 'white' : 'black',
                  backgroundColor: props.mode === 'dark' ? 'rgb(33,37,41)' : 'white',
+                 
 }
    
   return (
