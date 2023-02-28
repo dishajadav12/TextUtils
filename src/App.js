@@ -51,7 +51,7 @@ function App() {
       <Route exact path="/" index element={ <TextForm heading="Enter the text to analyze:" mode={mode} showAlert={showAlert}>
              <TextForm/></TextForm> } />
       </Routes>
-    </BrowserRouter>
+</BrowserRouter>
 
          
 
