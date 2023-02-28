@@ -2,11 +2,11 @@
 import React,{useState} from 'react'
 
 import './App.css';
-// import About from './Components/About';
+import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
@@ -42,16 +42,16 @@ function App() {
   }
   return (
 <>
-{/* <BrowserRouter> */}
+<BrowserRouter>
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} btn={btn}/>
     <Alert alert={alert}/>
-    <TextForm heading="Enter the text to analyze:" mode={mode} showAlert={showAlert}/>
-      {/* <Routes>
+      <Routes>
         <Route exact path="/about" element={<About />}>
       </Route>
-      <Route exact path="/" index element={<TextForm/></TextForm> } />
+      <Route exact path="/" index element={ <TextForm heading="Enter the text to analyze:" mode={mode} showAlert={showAlert}>
+             <TextForm/></TextForm> } />
       </Routes>
-    </BrowserRouter> */}
+    </BrowserRouter>
 
          
 
